@@ -1,19 +1,49 @@
-MegaDown v. 0.1
+MegaDown beta.0.2
 ===============
+
+Utilidad de línea de comandos para descargar desde mega.o.nz
+
+Requisitos del sistema:
+	
+	Python 2.7          - http://www.python.org/download/releases/2.7/
+    PyCrypto            - https://github.com/dlitz/pycrypto
+    Python-Progressbar  - http://code.google.com/p/python-progressbar/
+
+Instrucciones:
+
+	Windows
+		Instalar Python 2.7 desde: http://www.python.org/download/releases/2.7/
+
+	Instalar dependencias (Windows / MAC / LINUX):
+		pip install -r pip_requirement.txt	
+		ó
+		sudo pip install -r pip_requirement.txt	
+
+
+Ejecución:
+
+    python megadown.py
+
+
+
 
 Command-line (CLI) download tool for mega.co.nz
 
-Instructions (MAC/LINUX):
 
 Prerequisites:
+	
+	Python 2.7          - http://www.python.org/download/releases/2.7/
+    PyCrypto            - https://github.com/dlitz/pycrypto
+    Python-Progressbar  - http://code.google.com/p/python-progressbar/
 
-    PyCrypto    - https://github.com/dlitz/pycrypto
-    Python-Progressbar   - http://code.google.com/p/python-progressbar/
+Installation (Windows / MAC / LINUX):
+	
+	Instalar Python 2.7 desde: http://www.python.org/download/releases/2.7/
 
-Installation:
-
-    1-  sudo pip install pycrypto
-    2-  sudo pip install progressbar
+	Install dependencies:
+		pip install -r pip_requirement.txt	
+		or
+		sudo pip install -r pip_requirement.txt	
     
 Execute:
 

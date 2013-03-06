@@ -45,14 +45,14 @@ class Mega():
     # self.conexiones = int(config.get('mega.co.nz','conexiones'))
     self.megadown_print("%s %s - %s\n"%(self.app,self.version,self.title))
     
-    files=raw_input("Introduzca link de mega:")
-    if files.find('mega')>-1:
-      for url in files.split(','):
-        path = self.megadown_parse_url(url).split('!')
-        file_id = path[0]
-        file_key = path[1]
-        self.megadown_getfile(file_id, file_key)
-  
+    files=raw_input("Introduzca uno o varios link's de mega.co.nz (separados por ,): ")
+    while files.find('mega.co.nz')==-1:
+      files=raw_input("No se encontraron links de mega.\nIntroduzca uno o varios link's de mega.co.nz (separados por ,) o pulse (CTRL+C) para salir:")
+    for url in files.split(','):
+      path = self.megadown_parse_url(url).split('!')
+      file_id = path[0]
+      file_key = path[1]
+      self.megadown_getfile(file_id, file_key)
   def megadown_print(self,mensaje):
     print mensaje
 
@@ -71,14 +71,15 @@ class Mega():
     meta_mac = key[6:8]
    
     self.megadown_print("\n\nObteniendo acceso al link de mega.co.nz: %s"%(file_id))
-    
+    self.megadown_print("Espere por favor...")
+
     file = api_req({'a': 'g', 'g': 1, 'p': file_id})
     dl_url = file['g']
     size = file['s']
     attributes = base64urldecode(file['at']) 
     attributes = dec_attr(attributes, k)
     
-    self.megadown_print ("Fichero localizado: %s [%s]" % (attributes['n'],  self.megadown_GetHumanReadable(size)))
+    self.megadown_print ("Fichero encontrado: %s [%s]\n" % (attributes['n'],  self.megadown_GetHumanReadable(size)))
    
     decryptor = AES.new(a32_to_str(k), AES.MODE_CTR, counter = Counter.new(128, initial_value = ((iv[0] << 32) + iv[1]) << 64))
    
@@ -91,7 +92,7 @@ class Mega():
     #--------------------- 
     # PROGRESSBAR
     #---------------------   
-    widgets = ['Descarga: ', Percentage(), ' ', Bar(marker='#'),
+    widgets = ['Descargando: ', Percentage(), ' ', Bar(marker='#'),
                  ' ', ETA(), ' ', FileTransferSpeed()]
     pbar = ProgressBar(widgets=widgets, maxval=size).start()
     #--------------------- 
@@ -139,7 +140,7 @@ class Mega():
 
 
   def megadown_signal_handler(self,signal, frame):
-    self.megadown_print('\nLa descarga ha sido abortada.\n\nGracias por utilizar megadown.')
+    self.megadown_print('\nLa descarga ha sido abortada.\n\nGracias por utilizar %s.'%(self.app))
     sys.exit(0)
 
 
