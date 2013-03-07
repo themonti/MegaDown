@@ -1,7 +1,7 @@
 MegaDown beta.0.2
 ===============
 
-Utilidad de línea de comandos para descargar desde mega.o.nz
+Utilidad de línea de comandos para descargar desde mega.co.nz
 
 Requisitos del sistema:
 	
