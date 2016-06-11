@@ -202,7 +202,7 @@ class Mega():
     files=raw_input("Introduzca uno o varios link's de mega.co.nz (separados por ,): ")
     # Pruebas:
     # files="https://mega.co.nz/#!MNE0mJDB!dTRxvDzVV0N3_d8iACFuwlnR87ldsHf8fl5xrGk36k0,https://mega.co.nz/#!NBMSGI7T!V03qPTuE7Qqrb2WIDUsPOVh5QsYE1Wun8SVkqEIOJbA"
-    while files.find('mega.co.nz')==-1:
+    while files.find('mega.nz')==-1:
       files=raw_input("No se encontraron links de mega.\nIntroduzca uno o varios link's de mega.co.nz (separados por ,) o pulse (CTRL+C) para salir:")
     for url in files.split(','):
       path = self.megadown_parse_url(url).split('!')
@@ -227,7 +227,7 @@ class Mega():
     iv = key[4:6] + (0, 0)
     meta_mac = key[6:8]
    
-    self.megadown_print("\n\nObteniendo acceso al link de mega.co.nz: %s"%(file_id))
+    self.megadown_print("\n\nObteniendo acceso al link de mega.nz: %s"%(file_id))
     self.megadown_print("Espere por favor...")
 
     file = api_req({'a': 'g', 'g': 1, 'p': file_id})
