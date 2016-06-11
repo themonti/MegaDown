@@ -7,7 +7,7 @@ MegaDown beta.0.4
 
 
 
-Utilidad de línea de comandos para descargar desde mega.co.nz
+Utilidad de línea de comandos para descargar desde mega.nz
 -----------------------------------------------
 
 Requisitos del sistema:
@@ -34,7 +34,7 @@ Ejecución:
 
 
 
-Command-line (CLI) download tool for mega.co.nz
+Command-line (CLI) download tool for mega.nz
 -----------------------------------------------
 
 *Description*
