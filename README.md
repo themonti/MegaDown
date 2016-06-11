@@ -1,7 +1,14 @@
-MegaDown beta.0.2
+MegaDown beta.0.4
 ===============
+Changes:
+--------
 
-Utilidad de línea de comandos para descargar desde mega.co.nz
+1.Mega.co.nz to mega.nz
+------------------------
+
+*Descripción*
+
+**Utilidad de línea de comandos para descargar desde mega.co.nz**
 
 Requisitos del sistema:
 	
@@ -28,6 +35,9 @@ Ejecución:
 
 
 Command-line (CLI) download tool for mega.co.nz
+-----------------------------------------------
+
+*Description*
 
 
 Prerequisites:
