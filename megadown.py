@@ -3,7 +3,7 @@
 # Filename: megadown.py
 
 
-# MegaDown beta.0.3
+# MegaDown beta.0.4
 
 # Script basado en la información publicada en el blog:
 # http://julien-marchand.fr/blog/using-the-mega-api-how-to-download-a-public-file-or-a-file-you-know-the-key-without-logging-in/
